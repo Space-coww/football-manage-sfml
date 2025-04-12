@@ -16,7 +16,7 @@
 
 sf::Clock deltaClock;
 
-sf::Vector2f fixBounds(sf::Vector2f currentPosition, sf::Vector2f velocity, float dt, int screenWidth, int screenHeight) {
+sf::Vector2f fixBounds(sf::Vector2f currentPosition, sf::Vector2f velocity, float dt, int screenWidth, int screenHeight, bool isBall=false) {
     // Calculate the displacement (how far the player moves)
     sf::Vector2f displacement = velocity * dt;
 
@@ -26,16 +26,24 @@ sf::Vector2f fixBounds(sf::Vector2f currentPosition, sf::Vector2f velocity, floa
     // Check for boundaries and keep the player within the screen
     if (newPosition.x < 0) {
         newPosition.x = 0; // Left boundary
+        if (isBall)
+            Ball.velocity.x *= -1.f;
     }
     else if (newPosition.x > screenWidth) {
         newPosition.x = screenWidth; // Right boundary
+        if (isBall)
+            Ball.velocity.x *= -1.f;
     }
 
     if (newPosition.y < 0) {
         newPosition.y = 0; // Top boundary
+        if (isBall)
+            Ball.velocity.y *= -1.f;
     }
     else if (newPosition.y > screenHeight) {
         newPosition.y = screenHeight; // Bottom boundary
+        if (isBall)
+            Ball.velocity.y *= -1.f;
     }
 
     return newPosition; // Return the calculated new position
@@ -74,6 +82,12 @@ int main()
     float screenHeight = static_cast<float>(screenSize.y);
 
     initiateGoals(screenWidth, screenHeight);
+
+    if (!(aiInitialize() == 0))
+    {
+        std::cerr << "Error Initializing AI" << std::endl;
+        return -1;
+    }
 
     // Textures
 
@@ -126,6 +140,10 @@ int main()
     // ai initialization
 
     sf::Bot ai1(texture1);
+
+    ai1.wantsBall = true;
+
+    ai1.target = Ball.ballCoords;
 
     // Play Button initialization.
 
@@ -184,12 +202,12 @@ int main()
         int currentAction = 0; // Default action: nothing
 
         // Check for pickup (automatic or 'E' key)
-        float pickupDistance = 20.0f; // Adjust this distance as needed
+        float pickupDistance = std::abs(Ball.velocity.x) > 2.f || std::abs(Ball.velocity.y) > 2.f ? 50.f : 20.f; // Adjust this distance as needed
         sf::Vector2f playerCenter = player.getGlobalBounds().getCenter();
         sf::Vector2f ballCenter = football.getGlobalBounds().getCenter();
         float distance = std::sqrt(std::pow(playerCenter.x - ballCenter.x, 2) + std::pow(playerCenter.y - ballCenter.y, 2));
 
-        if ((distance < pickupDistance || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E)) && !Ball.isPickedUp) {
+        if (((distance < pickupDistance || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E)) && !Ball.isPickedUp) && Data.cooldown < 1) {
             currentAction = 3; // Steal/Pickup
         }
 
@@ -219,6 +237,25 @@ int main()
 
 #pragma endregion
 
+#pragma region Bot Handling
+
+        if (ai1.possesion)
+        {
+            ai1.target = Goals.goal1Coords;
+        }
+        if (ai1.wantsBall && !ai1.possesion)
+        {
+            ai1.target = Ball.ballCoords;
+        }
+
+        ai1.updateAI(dt, window, &football);
+
+        if (!(ai1.action == ' '))
+        {
+            updateBall(2, actionGuide[ai1.action], 2, dt, window, 1, false, &ai1);
+        }
+
+#pragma endregion
 
 #pragma region Drawing Screen
 
@@ -226,12 +263,14 @@ int main()
 
         window.draw(field);
 
-        // Set the Balls's position
+        // Set the Ball's position
         Ball.ballCoords += Ball.velocity;
-        Ball.ballCoords = fixBounds(Ball.ballCoords, Ball.velocity, dt, screenWidth, screenHeight);
+        Ball.ballCoords = fixBounds(Ball.ballCoords, Ball.velocity, dt, screenWidth, screenHeight, true);
         football.setPosition(Ball.ballCoords);
 
         window.draw(football);
+
+        window.draw(ai1);
 
         if (Data.plrVisible == true)
         {
@@ -242,6 +281,11 @@ int main()
             else
                 player.setTexture(texture1);
 
+            if (Data.aiFacingDirection == -1.0)
+                ai1.setTexture(texturePlayerLeft);
+            else
+                ai1.setTexture(texture1);
+
             player.setPosition(newPlayerPos);
             Data.playerCoords = player.getPosition();
 
@@ -251,6 +295,8 @@ int main()
         window.draw(playButton);
 
         window.display();
+
+        Data.cooldown -= 200 * dt;
 
 #pragma endregion
     }
