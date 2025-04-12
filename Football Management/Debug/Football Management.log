@@ -1,0 +1,41 @@
+﻿  ball.cpp
+C:\Users\ealos\source\repos\Football Management\External\SFML\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
+  (compiling source file 'ball.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
+      see declaration of 'std::runtime_error'
+      C:\Users\ealos\source\repos\Football Management\External\SFML\include\SFML\System\Exception.hpp(41,23):
+      see declaration of 'sf::Exception'
+  
+C:\Users\ealos\source\repos\Football Management\Football Management\ball.cpp(84,24): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  bot.cpp
+C:\Users\ealos\source\repos\Football Management\External\SFML\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
+  (compiling source file 'bot.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
+      see declaration of 'std::runtime_error'
+      C:\Users\ealos\source\repos\Football Management\External\SFML\include\SFML\System\Exception.hpp(41,23):
+      see declaration of 'sf::Exception'
+  
+  main.cpp
+C:\Users\ealos\source\repos\Football Management\External\SFML\include\SFML\System\Exception.hpp(41,47): warning C4275: non dll-interface class 'std::runtime_error' used as base for dll-interface class 'sf::Exception'
+  (compiling source file 'main.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\stdexcept(100,19):
+      see declaration of 'std::runtime_error'
+      C:\Users\ealos\source\repos\Football Management\External\SFML\include\SFML\System\Exception.hpp(41,23):
+      see declaration of 'sf::Exception'
+  
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(31,25): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(31,25): warning C4244:         with
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(31,25): warning C4244:         [
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(31,25): warning C4244:             T=float
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(31,25): warning C4244:         ]
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(38,25): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(38,25): warning C4244:         with
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(38,25): warning C4244:         [
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(38,25): warning C4244:             T=float
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(38,25): warning C4244:         ]
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(233,86): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(233,73): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(240,105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ealos\source\repos\Football Management\Football Management\main.cpp(240,92): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Football Management.vcxproj -> C:\Users\ealos\source\repos\Football Management\Debug\Football Management.exe
