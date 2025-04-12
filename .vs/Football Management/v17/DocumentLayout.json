@@ -1,0 +1,236 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ealos\\source\\repos\\Football Management\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\bot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\bot.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\USERS\\EALOS\\SOURCE\\REPOS\\FOOTBALL MANAGEMENT\\EXTERNAL\\SFML\\INCLUDE\\SFML\\SYSTEM\\EXCEPTION.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:EXTERNAL\\SFML\\INCLUDE\\SFML\\SYSTEM\\EXCEPTION.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\goal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\goal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\movement.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\movement.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\button.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\bot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\bot.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\ball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\ball.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\button.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\goal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A9EEAA11-E00A-48D0-9700-4726C884E6F7}|Football Management\\Football Management.vcxproj|solutionrelative:Football Management\\goal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Exception.hpp",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\External\\SFML\\include\\SFML\\System\\Exception.hpp",
+              "RelativeDocumentMoniker": "External\\SFML\\include\\SFML\\System\\Exception.hpp",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\External\\SFML\\include\\SFML\\System\\Exception.hpp",
+              "RelativeToolTip": "External\\SFML\\include\\SFML\\System\\Exception.hpp",
+              "ViewState": "AgIAABQAAAAAAAAAAAArwCUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-12T00:11:16.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "bot.cpp",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\bot.cpp",
+              "RelativeDocumentMoniker": "Football Management\\bot.cpp",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\bot.cpp",
+              "RelativeToolTip": "Football Management\\bot.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-11T15:37:26.457Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "bot.h",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\bot.h",
+              "RelativeDocumentMoniker": "Football Management\\bot.h",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\bot.h",
+              "RelativeToolTip": "Football Management\\bot.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-11T14:52:51.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "goal.h",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\goal.h",
+              "RelativeDocumentMoniker": "Football Management\\goal.h",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\goal.h",
+              "RelativeToolTip": "Football Management\\goal.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-10T14:11:42.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "game.h",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\game.h",
+              "RelativeDocumentMoniker": "Football Management\\game.h",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\game.h",
+              "RelativeToolTip": "Football Management\\game.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-10T14:07:52.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\main.cpp",
+              "RelativeDocumentMoniker": "Football Management\\main.cpp",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\main.cpp",
+              "RelativeToolTip": "Football Management\\main.cpp",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAkwLYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-29T21:16:43.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "button.h",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\button.h",
+              "RelativeDocumentMoniker": "Football Management\\button.h",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\button.h",
+              "RelativeToolTip": "Football Management\\button.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-11T14:55:22.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "goal.cpp",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\goal.cpp",
+              "RelativeDocumentMoniker": "Football Management\\goal.cpp",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\goal.cpp",
+              "RelativeToolTip": "Football Management\\goal.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-10T14:02:17.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "movement.cpp",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\movement.cpp",
+              "RelativeDocumentMoniker": "Football Management\\movement.cpp",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\movement.cpp",
+              "RelativeToolTip": "Football Management\\movement.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAD8AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-03T14:53:07.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ball.cpp",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\ball.cpp",
+              "RelativeDocumentMoniker": "Football Management\\ball.cpp",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\ball.cpp",
+              "RelativeToolTip": "Football Management\\ball.cpp",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-06T13:03:25.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ball.h",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\ball.h",
+              "RelativeDocumentMoniker": "Football Management\\ball.h",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\ball.h",
+              "RelativeToolTip": "Football Management\\ball.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-10T14:52:15.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "button.cpp",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\button.cpp",
+              "RelativeDocumentMoniker": "Football Management\\button.cpp",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\button.cpp",
+              "RelativeToolTip": "Football Management\\button.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-03T14:51:58.991Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "game.cpp",
+              "DocumentMoniker": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\game.cpp",
+              "RelativeDocumentMoniker": "Football Management\\game.cpp",
+              "ToolTip": "C:\\Users\\ealos\\source\\repos\\Football Management\\Football Management\\game.cpp",
+              "RelativeToolTip": "Football Management\\game.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-03T14:55:57.056Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
