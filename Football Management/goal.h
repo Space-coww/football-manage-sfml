@@ -8,7 +8,7 @@ struct goalData
 	sf::Vector2f goal1Coords;
 	sf::Vector2f goal2Coords;
 
-	i
+	
 };
 
 void initiateGoals(float width, float height);

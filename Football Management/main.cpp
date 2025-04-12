@@ -184,7 +184,7 @@ int main()
         int currentAction = 0; // Default action: nothing
 
         // Check for pickup (automatic or 'E' key)
-        float pickupDistance = 50.0f; // Adjust this distance as needed
+        float pickupDistance = 20.0f; // Adjust this distance as needed
         sf::Vector2f playerCenter = player.getGlobalBounds().getCenter();
         sf::Vector2f ballCenter = football.getGlobalBounds().getCenter();
         float distance = std::sqrt(std::pow(playerCenter.x - ballCenter.x, 2) + std::pow(playerCenter.y - ballCenter.y, 2));
