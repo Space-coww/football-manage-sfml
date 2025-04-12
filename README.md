@@ -1,8 +1,5 @@
-# football-manage-sfml
+# Football Management - SFML
 
-## This is a Football (American Soccer) Game made using SFML
+## Windows Support
 
-### Support
-- Windows x86 Architecture
-- Windows x64 by default of x86
-- MacOS (W.I.P.)
+- See the master branch for installation instructions
