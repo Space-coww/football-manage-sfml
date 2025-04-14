@@ -13,4 +13,6 @@ struct goalData
 
 void initiateGoals(float width, float height);
 
+int updateGoal(sf::Sprite* bar1, sf::Sprite* bar2, sf::Sprite* football);
+
 extern goalData Goals;

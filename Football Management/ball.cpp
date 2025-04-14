@@ -1,7 +1,9 @@
 #include "ball.h"
 #include "game.h"
 #include "bot.h"
+#include "funcs.h"
 
+#include <SFML/Graphics.hpp>
 #include <random>
 #include <ctime>
 #include <algorithm>
@@ -14,11 +16,27 @@ ballData Ball = {
     0.f        // Steal timer
 };
 
-static bool isBelow(float number, float standard) {
-    return std::abs(number) < standard;
+static void aimBall(sf::Vector2i target, sf::Vector2f shooter, bool shoot)
+{
+    sf::Vector2f relativePos = sf::Vector2f(target) - shooter;
+
+    // 2. Calculate the direction vector
+    float length = std::sqrt(relativePos.x * relativePos.x + relativePos.y * relativePos.y);
+    sf::Vector2f direction;
+    if (length != 0) {
+        direction = relativePos / length;
+    }
+    else {
+        direction = { 1.f, 0.f };
+    }
+
+    // 3. Apply the direction vector to the ball's velocity
+    float speed = shoot ? 12.5f : 8.f;
+    Ball.velocity = direction * speed;
 }
 
-void updateBall(int touchingPlayer, int action, int playerActing, float dt, sf::RenderWindow& window, int team, bool friction, sf::Bot* bot) {
+void updateBall(int touchingPlayer, int action, int playerActing, float dt, sf::RenderWindow& window, int team, bool friction, sf::Bot* bot)
+{
     /*
     Actions
     0 - Nothing
@@ -58,26 +76,19 @@ void updateBall(int touchingPlayer, int action, int playerActing, float dt, sf::
                     // 1. Get mouse position relative to player
                     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
                     sf::Vector2f playerPos = Data.playerCoords;
-                    sf::Vector2f relativeMousePos = sf::Vector2f(mousePos) - playerPos;
-
-                    // 2. Calculate the direction vector
-                    float length = std::sqrt(relativeMousePos.x * relativeMousePos.x + relativeMousePos.y * relativeMousePos.y);
-                    sf::Vector2f direction;
-                    if (length != 0) {
-                        direction = relativeMousePos / length;
-                    }
-                    else {
-                        direction = { 1.f, 0.f };
-                    }
-
-                    // 3. Apply the direction vector to the ball's velocity
-                    float speed = (action == 1) ? 8.f : 12.5f;
-                    Ball.velocity = direction * speed;
+                    aimBall(mousePos, playerPos, 1);
                 }
             }
         }
         break;
-    case 2:
+    case 2: { // Slide Tackle
+        Ball.playerDribbling = playerActing;
+        Ball.isPickedUp = true;
+        if (bot != nullptr)
+        {
+            bot->possesion = true;
+            bot->wantsBall = false;
+        }
         break;
 
     case 3: // Steal
@@ -95,50 +106,17 @@ void updateBall(int touchingPlayer, int action, int playerActing, float dt, sf::
     case 4: // Shoot
         if (Ball.isPickedUp) {
             if (Ball.playerDribbling == playerActing) {
+                Ball.playerDribbling = 0;
+                Ball.isPickedUp = false;
                 if (playerActing == 1)
                 {
-                    Ball.playerDribbling = 0;
-                    Ball.isPickedUp = false;
-
-                    // 1. Get mouse position relative to player
                     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
                     sf::Vector2f playerPos = Data.playerCoords;
-                    sf::Vector2f relativeMousePos = sf::Vector2f(mousePos) - playerPos;
-
-                    // 2. Calculate the direction vector
-                    float length = std::sqrt(relativeMousePos.x * relativeMousePos.x + relativeMousePos.y * relativeMousePos.y);
-                    sf::Vector2f direction;
-                    if (length != 0) {
-                        direction = relativeMousePos / length;
-                    }
-                    else {
-                        direction = { 1.f, 0.f };
-                    }
-
-                    // 3. Apply the direction vector to the ball's velocity
-                    float speed = (action == 1) ? 8.f : 12.5f;
-                    Ball.velocity = direction * speed;
+                    aimBall(mousePos, playerPos, 2);
                 }
                 else
                 {
-                    Ball.playerDribbling = 0;
-                    Ball.isPickedUp = false;
-
-                    sf::Vector2f relativeTarget = bot->target - bot->getPosition();
-
-                    // 2. Calculate the direction vector
-                    float length = std::sqrt(relativeTarget.x * relativeTarget.x + relativeTarget.y * relativeTarget.y);
-                    sf::Vector2f direction;
-                    if (length != 0) {
-                        direction = relativeTarget / length;
-                    }
-                    else {
-                        direction = { 1.f, 0.f };
-                    }
-
-                    // 3. Apply the direction vector to the ball's velocity
-                    float speed = (action == 1) ? 8.f : 12.5f;
-                    Ball.velocity = direction * speed;
+                    aimBall(sf::Vector2i(bot->target), bot->getPosition(), 2);
                 }
             }
         }
