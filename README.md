@@ -8,15 +8,15 @@
 - MacOS (Working with some bugs)
 
 ### How to Play on MacOS!
-MacOS has a bug where you cannot move, Work in progress...
-FootballGame.dmg is damaged during testing...
+-MacOS has a bug where you cannot move, Work in progress...
+-FootballGame.dmg is damaged during testing...
 
 ### Other
-please report any bugs not listed
+-please report any bugs not listed
 
 ### MacOS chips
 ## This game is only playable on these chips:
-Apple M1
-Apple M2
-Apple M3
-Apple M4
+-Apple M1
+-Apple M2
+-Apple M3
+-Apple M4
