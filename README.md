@@ -14,7 +14,6 @@
 ### Other
 - please report any bugs not listed
 
-### MacOS chips
 ## This game is only playable on these chips:
 - Apple M1
 - Apple M2
