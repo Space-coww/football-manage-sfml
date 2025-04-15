@@ -1,6 +1,9 @@
 #pragma once
 
 #include <SFML\Graphics.hpp>
+#include "bot.h"
+
+void updateBall(int touchingPlayer, int action, int playerActing, float dt, sf::RenderWindow& window, int team, bool friction = false, sf::Bot* bot = nullptr);
 
 struct ballData
 {
@@ -15,5 +18,3 @@ struct ballData
 };
 
 extern ballData Ball;
-
-void updateBall(int touchingPlayer, int action, int playerActing, float dt, sf::RenderWindow& window, int team);

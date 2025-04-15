@@ -11,52 +11,11 @@
 #include "ball.h"
 #include "goal.h"
 #include "bot.h"
+#include "funcs.h"
 
 #pragma endregion
 
 sf::Clock deltaClock;
-
-sf::Vector2f fixBounds(sf::Vector2f currentPosition, sf::Vector2f velocity, float dt, int screenWidth, int screenHeight) {
-    // Calculate the displacement (how far the player moves)
-    sf::Vector2f displacement = velocity * dt;
-
-    // Calculate the new position
-    sf::Vector2f newPosition = currentPosition + displacement;
-
-    // Check for boundaries and keep the player within the screen
-    if (newPosition.x < 0) {
-        newPosition.x = 0; // Left boundary
-    }
-    else if (newPosition.x > screenWidth) {
-        newPosition.x = screenWidth; // Right boundary
-    }
-
-    if (newPosition.y < 0) {
-        newPosition.y = 0; // Top boundary
-    }
-    else if (newPosition.y > screenHeight) {
-        newPosition.y = screenHeight; // Bottom boundary
-    }
-
-    return newPosition; // Return the calculated new position
-}
-
-bool isBelow(float number, float standard)
-{
-    return std::abs(number) < standard;
-}
-
-bool intersects(sf::IntRect a, sf::IntRect b) {
-    sf::Vector2i posA = a.position;
-    sf::Vector2i sizeA = a.size;
-    sf::Vector2i posB = b.position;
-    sf::Vector2i sizeB = b.size;
-
-    return posA.x < posB.x + sizeB.x &&
-        posA.x + sizeA.x > posB.x &&
-        posA.y < posB.y + sizeB.y &&
-        posA.y + sizeA.y > posB.y;
-}
 
 int main()
 {
@@ -75,10 +34,16 @@ int main()
 
     initiateGoals(screenWidth, screenHeight);
 
-    // Textures
+    if (!(aiInitialize() == 0))
+    {
+        std::cerr << "Error Initializing AI" << std::endl;
+        return -1;
+    }
 
-    sf::Texture texture1;
-    if (!texture1.loadFromFile("player.png")) {
+#pragma region Texture Loading...
+
+    sf::Texture texturePlayerRight;
+    if (!texturePlayerRight.loadFromFile("player.png")) {
         std::cerr << "Error loading image!" << std::endl;
         return -1; // Exit with an error code
     }
@@ -112,11 +77,13 @@ int main()
     int width = window.getSize().x;
     int height = window.getSize().y;
 
+#pragma endregion
+
 #pragma region Sprite Initialization
 
     // Player Initialization
 
-    sf::Sprite player(texture1);
+    sf::Sprite player(texturePlayerRight);
 
     sf::FloatRect playerBounds = player.getGlobalBounds();
 
@@ -125,7 +92,11 @@ int main()
 
     // ai initialization
 
-    sf::Bot ai1(texture1);
+    sf::Bot ai1(texturePlayerLeft);
+
+    ai1.wantsBall = true;
+
+    ai1.target = Ball.ballCoords;
 
     // Play Button initialization.
 
@@ -167,9 +138,9 @@ int main()
         while (const std::optional event = window.pollEvent())
         {
             if (event->is<sf::Event::Closed>())
-                window.close();
+                window.close(); // Close Window
         }
-        float dt = deltaClock.restart().asSeconds();
+        float dt = deltaClock.restart().asSeconds(); // Get Delta-Time
 
 #pragma endregion
 
@@ -184,14 +155,11 @@ int main()
         int currentAction = 0; // Default action: nothing
 
         // Check for pickup (automatic or 'E' key)
-        float pickupDistance = 20.0f; // Adjust this distance as needed
+        // If ball is moving, set pick-up distance higher to account for velocity changes
+        float pickupDistance = !isBelow(Ball.velocity.x, 2.f) ||!isBelow(Ball.velocity.y, 2.f) ? 50.f : 20.f;
         sf::Vector2f playerCenter = player.getGlobalBounds().getCenter();
-        sf::Vector2f ballCenter = football.getGlobalBounds().getCenter();
+        sf::Vector2f ballCenter = football.getGlobalBounds().getCenter(); 
         float distance = std::sqrt(std::pow(playerCenter.x - ballCenter.x, 2) + std::pow(playerCenter.y - ballCenter.y, 2));
-
-        if ((distance < pickupDistance || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E)) && !Ball.isPickedUp) {
-            currentAction = 3; // Steal/Pickup
-        }
 
         // Check for pass/shoot only if player has the ball and no other action is happening
         if (currentAction == 0 && Ball.isPickedUp && Ball.playerDribbling == 1) {
@@ -203,6 +171,10 @@ int main()
             }
         }
 
+        if (((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E)) || (distance < pickupDistance && !Ball.isPickedUp)) && Data.cooldown < 1) {
+            currentAction = 3; // Steal/Pickup
+        }
+
         // Update the ball state based on the determined action
         updateBall(1, currentAction, 1, dt, window, 1);
 
@@ -212,13 +184,36 @@ int main()
 
         if (playButton.clicked(window) && !(Data.plrVisible))
         {
-            playButton.setColor(sf::Color(0, 0, 0, 0));
+            playButton.setColor(sf::Color(0, 0, 0, 0)); // Hide the playButton
             Data.plrVisible = true;
-            player.setPosition({ width * 0.2f, height * 0.5f });
+            player.setPosition({ width * 0.2f, height * 0.5f }); // Set player to start on left side of the field
+            ai1.setPosition({ width * 0.8f, height * 0.5f }); // Set Bot to be across the field from the player
         }
 
 #pragma endregion
 
+#pragma region Bot Handling
+
+        if (Data.plrVisible)
+        {
+            if (ai1.possesion)
+            {
+                ai1.target = Goals.goal1Coords;
+            }
+            if (ai1.wantsBall && !ai1.possesion)
+            {
+                ai1.target = Ball.ballCoords;
+            }
+
+            ai1.updateAI(dt, window, &football);
+
+            if (!(ai1.action == ' '))
+            {
+                updateBall(2, actionGuide[ai1.action], 2, dt, window, 1, false, &ai1);
+            }
+        }
+
+#pragma endregion
 
 #pragma region Drawing Screen
 
@@ -226,31 +221,33 @@ int main()
 
         window.draw(field);
 
-        // Set the Balls's position
+        // Set the Ball's position
         Ball.ballCoords += Ball.velocity;
-        Ball.ballCoords = fixBounds(Ball.ballCoords, Ball.velocity, dt, screenWidth, screenHeight);
+        Ball.ballCoords = fixBounds(Ball.ballCoords, Ball.velocity, dt, screenWidth, screenHeight, true);
         football.setPosition(Ball.ballCoords);
 
         window.draw(football);
 
         if (Data.plrVisible == true)
         {
+
             sf::Vector2f newPlayerPos = fixBounds(player.getPosition(), Data.velocity, dt, screenWidth, screenHeight);
 
-            if (Data.facingDirection == -1.0)
-                player.setTexture(texturePlayerLeft);
-            else
-                player.setTexture(texture1);
+            directionFlip(&player, Data.facingDirection, texturePlayerLeft, texturePlayerRight);
+            directionFlip(&ai1, Data.facingDirection, texturePlayerLeft, texturePlayerRight);
 
             player.setPosition(newPlayerPos);
             Data.playerCoords = player.getPosition();
 
+            window.draw(ai1);
             window.draw(player);
         }
 
         window.draw(playButton);
 
         window.display();
+
+        Data.cooldown -= 200 * dt;
 
 #pragma endregion
     }

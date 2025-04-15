@@ -3,11 +3,7 @@
 
 #include "movement.h"
 #include "game.h"
-
-static bool isBelow(float number, float standard)
-{
-    return std::abs(number) < standard;
-}
+#include "funcs.h"
 
 // Adjusted constants for FC24-like feel
 const float switchSpeedMultiplier = 2.0f; // Multiplier for fast direction switching (reduced for smoother turns)
