@@ -156,7 +156,7 @@ int main()
 
         // Check for pickup (automatic or 'E' key)
         // If ball is moving, set pick-up distance higher to account for velocity changes
-        float pickupDistance = !isBelow(Ball.velocity.x, 2.f) ||!isBelow(Ball.velocity.y, 2.f) ? 50.f : 20.f;
+        float pickupDistance = !isBelow(Ball.velocity.x, 2.f) || !isBelow(Ball.velocity.y, 2.f) ? 50.f : 20.f;
         sf::Vector2f playerCenter = player.getGlobalBounds().getCenter();
         sf::Vector2f ballCenter = football.getGlobalBounds().getCenter(); 
         float distance = std::sqrt(std::pow(playerCenter.x - ballCenter.x, 2) + std::pow(playerCenter.y - ballCenter.y, 2));
